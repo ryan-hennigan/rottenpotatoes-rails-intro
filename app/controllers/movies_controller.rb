@@ -18,14 +18,14 @@ class MoviesController < ApplicationController
         session[:ratings] = params[:ratings]
     elsif(session.key?(:ratings))
         params[:ratings] = session[:ratings]
-	redirect_to movies_path(params)
+	redirect_to movies_path(params) and return 
     end
 
     if(params.key?(:sort_by))
         session[:sort_by] = params[:sort_by]
     elsif(session.key?(:sort_by))
         params[:sort_by] = session[:sort_by]
-	redirect_to movies_path(params)
+	redirect_to movies_path(params) and return 
     end
 
 
